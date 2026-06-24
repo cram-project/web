@@ -1,0 +1,16 @@
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        VITE_API_URL: ""
+    image: cram_frontend:local
+    container_name: cram_web
+    networks:
+      - cram-shared
+    restart: on-failure
+
+networks:
+  cram-shared:
+    external: true
