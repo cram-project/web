@@ -1,0 +1,21 @@
+.public-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem 2rem;
+  border-bottom: 1px solid var(--border);
+  background: var(--paper);
+}
+
+.public-header__brand {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: var(--green);
+}
+
+.public-header__nav {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
