@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Link, Outlet, useLocation, useNavigate } from "react-router-dom";
 import { useAuthStore } from "../store/auth.store.ts";
 import "../styles/DashboardLayout.css";
@@ -7,6 +8,18 @@ export function DashboardLayout() {
     const navigate = useNavigate();
     const logout = useAuthStore((s) => s.logout);
     const username = useAuthStore((s) => s.username);
+
+    useEffect(() => {
+        const onKeyDown = (e: KeyboardEvent) => {
+            const isR = e.key === "r" || e.key === "R";
+            if ((e.ctrlKey && e.shiftKey && isR) || (e.metaKey && isR)) {
+                e.preventDefault();
+                e.stopPropagation();
+            }
+        };
+        window.addEventListener("keydown", onKeyDown, true);
+        return () => window.removeEventListener("keydown", onKeyDown, true);
+    }, []);
 
     const handleLogout = () => {
         logout();

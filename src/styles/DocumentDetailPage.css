@@ -1,3 +1,19 @@
+.detail-page__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.detail-page__top .detail-page__back {
+  margin-bottom: 0;
+}
+
+.detail-page__top .delete-document {
+  flex-shrink: 0;
+}
+
 .detail-page__back {
   display: inline-block;
   margin-bottom: 1.5rem;
@@ -17,6 +33,11 @@
   margin-bottom: 2rem;
   padding-bottom: 1.5rem;
   border-bottom: 1px solid var(--border);
+}
+
+.detail-page__meta {
+  flex: 1;
+  min-width: 0;
 }
 
 .detail-page__icon-wrap {

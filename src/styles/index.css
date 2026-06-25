@@ -118,6 +118,22 @@ input:focus {
   color: var(--green);
 }
 
+.btn-danger {
+  border: 1px solid #c0392b;
+  background: transparent;
+  color: #c0392b;
+}
+
+.btn-danger:hover {
+  background: #c0392b;
+  color: var(--paper);
+}
+
+.btn-danger:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
 .mono {
   font-family: var(--font-mono);
   font-size: 0.8rem;

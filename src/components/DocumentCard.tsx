@@ -11,12 +11,14 @@ export function DocumentCard({ doc }: { doc: LibraryResponse }) {
     });
 
     return (
-        <Link to={`/documents/${doc.id}`} className="doc-card">
-            <div className="doc-card__icon">
-                <DocumentIcon size={48} />
-            </div>
-            <h3 className="doc-card__title">{doc.title}</h3>
-            <time className="doc-card__date mono" dateTime={doc.created_at}>{date}</time>
-        </Link>
+        <article className="doc-card">
+            <Link to={`/documents/${doc.id}`} className="doc-card__link">
+                <div className="doc-card__icon">
+                    <DocumentIcon size={48} />
+                </div>
+                <h3 className="doc-card__title">{doc.title}</h3>
+                <time className="doc-card__date mono" dateTime={doc.created_at}>{date}</time>
+            </Link>
+        </article>
     );
 }

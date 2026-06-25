@@ -39,6 +39,14 @@ export function DocumentsPage() {
             </header>
 
             <div className="documents-page__toolbar">
+                <button
+                    type="button"
+                    className="btn btn-outline"
+                    onClick={loadDocuments}
+                    disabled={loading}
+                >
+                    {loading ? "Обновление…" : "Обновить"}
+                </button>
                 <UploadDocument onUploaded={loadDocuments} />
             </div>
 

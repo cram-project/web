@@ -8,16 +8,12 @@ export function PublicHeader() {
     return (
         <header className="public-header">
             <Link to="/" className="public-header__brand">Cram</Link>
-            <nav className="public-header__nav">
-                {token ? (
-                    <Link to="/documents" className="btn btn-primary">Дашборд</Link>
-                ) : (
-                    <>
-                        <Link to="/login" className="btn btn-ghost">Войти</Link>
-                        <Link to="/register" className="btn btn-primary">Регистрация</Link>
-                    </>
-                )}
-            </nav>
+            {!token && (
+                <nav className="public-header__nav">
+                    <Link to="/login" className="btn btn-ghost">Войти</Link>
+                    <Link to="/register" className="btn btn-primary">Регистрация</Link>
+                </nav>
+            )}
         </header>
     );
 }
